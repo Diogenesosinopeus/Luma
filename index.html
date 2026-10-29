@@ -31,7 +31,7 @@
         </nav>
 
         <div class="sidebar-bottom">
-          <div class="privacy-note"><span class="privacy-dot"></span><span>仅在本机播放</span></div>
+          <div class="privacy-note"><span class="privacy-dot"></span><span>仅在本机保存</span></div>
           <p class="version">LUMA / 01</p>
         </div>
       </aside>
@@ -54,11 +54,16 @@
           <div class="welcome-block">
             <div class="eyebrow"><span class="eyebrow-line"></span><span>LOCAL PLAYER</span></div>
             <h1>让喜欢的声音<br /><em>随时发生。</em></h1>
-            <p class="intro">导入电脑里的音乐，建立一份只属于你的播放列表。</p>
+            <p class="intro">导入电脑里的音乐，列表会保存在这台设备的浏览器里。</p>
             <label class="import-button primary-button" for="audio-input">
               <span class="button-plus">+</span><span>导入本地音乐</span>
             </label>
             <input id="audio-input" type="file" accept="audio/*" multiple hidden />
+            <div class="usage-strip" aria-label="本地听歌统计">
+              <div class="usage-stat"><span>累计听歌</span><strong id="usage-time">0 分钟</strong></div>
+              <span class="usage-divider"></span>
+              <div class="usage-stat"><span>本机歌曲</span><strong id="usage-tracks">0 首</strong></div>
+            </div>
           </div>
 
           <div class="now-playing-card">
@@ -76,6 +81,23 @@
               </div>
               <button class="like-button" type="button" id="like-button" aria-label="喜欢这首歌">♡</button>
             </div>
+          </div>
+        </section>
+
+        <section class="stats-section" id="stats" aria-label="听歌活动统计">
+          <div class="section-heading stats-heading">
+            <div><p class="section-kicker">LISTENING ACTIVITY</p><h2>听歌活动 <span>按周日开始统计</span></h2></div>
+            <div class="stats-tabs" role="tablist" aria-label="统计视图">
+              <button class="stats-tab" type="button" role="tab" aria-selected="false" data-stats-view="daily">每天</button>
+              <button class="stats-tab active" type="button" role="tab" aria-selected="true" data-stats-view="weekly">每周</button>
+              <button class="stats-tab" type="button" role="tab" aria-selected="false" data-stats-view="total">累计总量</button>
+            </div>
+          </div>
+          <div class="stats-card">
+            <div class="stats-card-topline"><span id="stats-caption">最近 26 周</span><strong id="stats-total">累计 0 分钟</strong></div>
+            <div id="stats-weekly" class="stats-panel"></div>
+            <div id="stats-daily" class="stats-panel" hidden></div>
+            <div id="stats-total-panel" class="stats-panel" hidden></div>
           </div>
         </section>
 

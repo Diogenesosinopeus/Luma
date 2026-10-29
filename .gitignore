@@ -1,0 +1,22 @@
+# 本地平台或部署配置，不提交到公开仓库
+.openai/
+
+# 不要把个人音乐文件上传到 GitHub
+*.mp3
+*.wav
+*.m4a
+*.flac
+*.aac
+*.ogg
+*.opus
+
+# 常见本机文件和打包产物
+.DS_Store
+Thumbs.db
+*.zip
+*.rar
+*.7z
+
+# 个人导出记录
+luma-专注记录-*.md
+
